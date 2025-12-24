@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := single_led_blink
+BUILD_ARTIFACT_NAME := Q.1
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-single_led_blink.elf \
+Q.1.elf \
 
 MAP_FILES += \
-single_led_blink.map \
+Q.1.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-single_led_blink.list \
+Q.1.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: single_led_blink.elf secondary-outputs
+main-build: Q.1.elf secondary-outputs
 
 # Tool invocations
-single_led_blink.elf single_led_blink.map: $(OBJS) $(USER_OBJS) D:\SUNBEAM_internship\SUNBEAM_DATA\ARM_94237_RiteshRamane\Assign_6\Q.1_Single_LED_Blink_HAL\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "single_led_blink.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\SUNBEAM_internship\SUNBEAM_DATA\ARM_94237_RiteshRamane\Assign_6\Q.1_Single_LED_Blink_HAL\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="single_led_blink.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Q.1.elf Q.1.map: $(OBJS) $(USER_OBJS) C:\Users\athar\OneDrive\Desktop\sunbeam\ data\ARM_94083_atharv-rakate-\ASSIGN_6\Q.1_Single_LED_Blink_HAL\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Q.1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\athar\OneDrive\Desktop\sunbeam data\ARM_94083_atharv-rakate-\ASSIGN_6\Q.1_Single_LED_Blink_HAL\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Q.1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-single_led_blink.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "single_led_blink.list"
+Q.1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Q.1.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout single_led_blink.elf single_led_blink.list single_led_blink.map
+	-$(RM) Q.1.elf Q.1.list Q.1.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
