@@ -2,7 +2,7 @@
  * dht11.h
  *
  *  Created on: Dec 31, 2025
- *      Author: RITESH
+ 
  */
 
 #ifndef INC_DHT11_H_

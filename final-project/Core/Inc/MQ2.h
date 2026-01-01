@@ -2,7 +2,7 @@
  * MQ2.h
  *
  *  Created on: Dec 30, 2025
- *      Author: RITESH
+
  */
 
 #ifndef INC_MQ2_H_

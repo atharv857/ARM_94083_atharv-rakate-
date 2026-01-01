@@ -2,7 +2,7 @@
  * led.h
  *
  *  Created on: Dec 30, 2025
- *      Author: RITESH
+
  */
 
 #ifndef INC_LED_H_
